@@ -22,7 +22,7 @@
 <script type="text/javascript" src="js/my.js"></script>
 
 
-<title>The Patio </title>
+<title>ITMO - 544 --- Mini Project 1 </title>
 </head>
 
 
@@ -42,50 +42,49 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
       				</button>
-      
-      				<a class="navbar-brand active" href="mnoormuh_index.html">Home</a>
+
+      				<a class="navbar-brand active" href="/">Home</a>
     			</div>
 
     			<!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
 				        <li><a href="/gallery" >Gallery</a></li>
-		       			<li><a href="mnoormuh_pg4.html">Submit</a></li>
+		       			<li><a href="/submit">Submit</a></li>
 				      </ul>
-      
-      
+
+
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 		</nav>
 
 		<div class="row">
 	  		<div class="col-md-6">
-			  	<h3>Please Provide Your Feedback and Help Us Improve Our Services</h3>
-						
-				<form role="form">
-				 	<div class="form-group">
-				 		<label for="FullName">Full Name:</label>
-				 		<input type="text" class="form-control" placeholder="Please type your Full Name here">
-					</div>
+			  	<h3>Please Upload an Image and Provide your information</h3>
 
-					<div class="form-group">
+				<form method=post action=/upload_data enctype=multipart/form-data>
+				 	<div class="form-group">
 				 		<label for="Phone">Phone Number:</label>
-				 		<input type="tel" class="form-control" placeholder="Please type your Phone Number here">
+				 		<input name="Phone" type="tel" class="form-control" placeholder="Please type your Phone Number here">
 					</div>
 
 
 
 				  	<div class="form-group">
 				    	<label for="email">Email address:</label>
-				    	<input type="email" class="form-control" placeholder="Please type your Email Address here">
+				    	<input name="email" type="email" class="form-control" placeholder="Please type your Email Address here">
 				  	</div>
-					 
-					
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>	
+
+					<div>
+						<h1>Upload new File</h1>
+      					<p><input type=text name=file>
+         				<input type="submit" class="btn btn-default" value=Upload>
+					</div>
+
+				</form>
 
 			</div>
-			
+
 		</div>
 
 
@@ -96,4 +95,4 @@
 
 
 
-</html> 
+</html>
