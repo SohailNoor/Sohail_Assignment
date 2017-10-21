@@ -95,14 +95,20 @@ def upload():
     s3_resource.meta.client.upload_file(image, 'pre-processed-kc', pre_image_name)
     image_file = Image.open(image)
     image_file = image_file.convert('1')
+    url_pre = s3_client.generate_presigned_url('get_object', Params={'Bucket': 'pre-processed-kc', 'Key': pre_image_name},
+                                        ExpiresIn=3600)
 
     #Change krishna to ubuntu
     post_image_name = "post_" + pre_image_name
+    post_image_path = "/home/krishna/" + post_image_name
     image_file.save("/home/krishna/" + post_image_name)
-    s3_resource.meta.client.upload_file(image, 'post-porcessed-kc', pre_image_name)
+    s3_resource.meta.client.upload_file(post_image_path, 'post-porcessed-kc', post_image_name)
 
+    url_post = s3_client.generate_presigned_url('get_object',
+                                               Params={'Bucket': 'post-porcessed-kc', 'Key': post_image_name},
+                                               ExpiresIn=3600)
 
-    return image
+    return url_post
 
 if __name__ == '__main__':
     app.run(debug=True)
